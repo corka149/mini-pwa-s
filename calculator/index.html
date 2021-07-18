@@ -25,15 +25,22 @@
                     <h2>Umrechnung</h2>
                     <div>
                         <label for="euro">EUR</label>
-                        <input id="euro" v-model="euroAmount" v-on:keyup="convert('toKrone')" type="number">
+                        <input id="euro" v-model="euroAmount" v-on:keyup="convert('toKrone')" v-on:click="clear('euro')"
+                            type="number">
                     </div>
                     <div>
                         <label for="krone">DKK</label>
-                        <input id="krone" v-model="kroneAmount" v-on:keyup="convert('toEuro')" type="number">
+                        <input id="krone" v-model="kroneAmount" v-on:keyup="convert('toEuro')"
+                            v-on:click="clear('krone')" type="number">
                     </div>
 
-                    <h2>Wechselkurs: {{ exchangeRate }}</h2>
-                    <div>
+                    <h2>
+                        Wechselkurs: {{ exchangeRate }}
+                        <i v-on:click="toggleEchangeExchangeRate" style="font-size: 1.25rem;"
+                            class="material-icons">edit</i>
+                    </h2>
+                    <div v-if="showChangeExchangeRate">
+
                         <label for="exchangeRate">Wechselkurs (EUR zu DKK)</label>
                         <input id="exchangeRate" v-model="tmpExchangeRate" type="number">
 
