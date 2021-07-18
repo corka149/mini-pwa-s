@@ -1,0 +1,26 @@
+{
+    "name": "Umrechner",
+    "short_name": "Umrechner",
+    "description": "Umrechner von EUR und DKK",
+    "icons": [
+        {
+            "src": "images/calculator.svg",
+            "sizes": "72x72 96x96 128x128 256x256",
+            "type": "image/svg"
+        },
+        {
+            "src": "images/calculator.png",
+            "sizes": "528x507",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon.ico",
+            "sizes": "16x16",
+            "type": "image/vnd.microsoft.icon"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "theme_color": "#f5deb3",
+    "background_color": "#f5deb3"
+}
