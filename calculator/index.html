@@ -16,28 +16,38 @@
 </head>
 
 <body>
-    <div id="calculator">
-        <h1>Euro-To-Krone Calculator</h1>
-        <h2>Convert</h2>
-        <div>
-            <label for="euro">Euro</label>
-            <input id="euro" v-model="euroAmount" v-on:keyup="convert('toKrone')" type="number">
-        </div>
-        <div>
-            <label for="krone">Krone</label>
-            <input id="krone" v-model="kroneAmount" v-on:keyup="convert('toEuro')" type="number">
-        </div>
+    <div class="content">
+        <form class="pure-form pure-form-stacked">
+            <fieldset>
 
-        <h2>Exchange rate: {{ exchangeRate }}</h2>
-        <div>
-            <label for="exchangeRate">Wechselkur</label>
-            <input id="exchangeRate" v-model="tmpExchangeRate" type="number">
+                <div id="calculator">
+                    <h1>Euro-Krone Rechner</h1>
+                    <h2>Umrechnung</h2>
+                    <div>
+                        <label for="euro">EUR</label>
+                        <input id="euro" v-model="euroAmount" v-on:keyup="convert('toKrone')" type="number">
+                    </div>
+                    <div>
+                        <label for="krone">DKK</label>
+                        <input id="krone" v-model="kroneAmount" v-on:keyup="convert('toEuro')" type="number">
+                    </div>
 
-            <div>
-                <button v-on:click="setExchangeRate" type="button">Save</button>
-                <button v-on:click="resetExchangeRate" type="button">Reset</button>
-            </div>
-        </div>
+                    <h2>Wechselkurs: {{ exchangeRate }}</h2>
+                    <div>
+                        <label for="exchangeRate">Wechselkurs (EUR zu DKK)</label>
+                        <input id="exchangeRate" v-model="tmpExchangeRate" type="number">
+
+                        <div style="padding: 1rem 0rem;">
+                            <button class="pure-button pure-button-primary" v-on:click="setExchangeRate"
+                                type="button">Speichern</button>
+                            <button class="pure-button pure-button-primary" v-on:click="resetExchangeRate"
+                                type="button">Zurücksetzen</button>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
