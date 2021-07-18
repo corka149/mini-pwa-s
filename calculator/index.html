@@ -20,17 +20,23 @@
         <h1>Euro-To-Krone Calculator</h1>
         <h2>Convert</h2>
         <div>
-            <input v-model="euroAmount" v-on:keyup="convert('toKrone')" type="number"> Euro
+            <label for="euro">Euro</label>
+            <input id="euro" v-model="euroAmount" v-on:keyup="convert('toKrone')" type="number">
         </div>
         <div>
-            <input v-model="kroneAmount" v-on:keyup="convert('toEuro')" type="number"> Krone
+            <label for="krone">Krone</label>
+            <input id="krone" v-model="kroneAmount" v-on:keyup="convert('toEuro')" type="number">
         </div>
 
         <h2>Exchange rate: {{ exchangeRate }}</h2>
         <div>
-            <input v-model="tmpExchangeRate" type="number">
-            <button v-on:click="setExchangeRate">Save</button>
-            <button v-on:click="resetExchangeRate">Reset</button>
+            <label for="exchangeRate">Wechselkur</label>
+            <input id="exchangeRate" v-model="tmpExchangeRate" type="number">
+
+            <div>
+                <button v-on:click="setExchangeRate" type="button">Save</button>
+                <button v-on:click="resetExchangeRate" type="button">Reset</button>
+            </div>
         </div>
     </div>
 
