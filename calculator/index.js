@@ -7,15 +7,15 @@ var convert = function (direction) {
     if ('toKrone' === direction && !!this.euroAmount) {
         this.kroneAmount = Math.round(this.euroAmount * exchangeRate * 100) / 100;
     } else if ('toKrone' === direction) {
-        this.kroneAmount = 0.0;
-        this.euroAmount = 0.0;
+        this.kroneAmount = '';
+        this.euroAmount = '';
     }
 
     if ('toEuro' === direction && !!this.kroneAmount) {
         this.euroAmount = Math.round(this.kroneAmount / exchangeRate * 100) / 100;
     } else if ('toEuro' === direction) {
-        this.kroneAmount = 0.0;
-        this.euroAmount = 0.0;
+        this.kroneAmount = '';
+        this.euroAmount = '';
     }
 }
 
